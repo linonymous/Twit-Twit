@@ -26,6 +26,7 @@ public class TweetManager {
                 .setOAuthAccessTokenSecret("Enter-Access-Secret-Token");
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = new TwitterFactory().getInstance();
+        String topic="CurrentTopic";
         ArrayList<String> tweetList = new ArrayList<String>();
         try {
             Query query = new Query(topic);
