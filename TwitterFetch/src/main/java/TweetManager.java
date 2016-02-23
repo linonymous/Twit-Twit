@@ -16,21 +16,19 @@ public class TweetManager {
 
     public static void main(String []args) throws Exception{
         ConfigurationBuilder cb = new ConfigurationBuilder();
+        
+        // Setting all the keys
+        
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("Enter-Consumer-Key")
                 .setOAuthConsumerSecret("Enter-Consumer-Secret")
                 .setOAuthAccessToken("Enter-Access-Token")
                 .setOAuthAccessTokenSecret("Enter-Access-Secret-Token");
         TwitterFactory tf = new TwitterFactory(cb.build());
-        //Twitter twitter = tf.getInstance();
-        Twitter twitter = tf.getInstance();
-        String a="Tweeting through twitter4j! Its Amazing! #FUN #Twitter #TensedMSE";
-        Status status = twitter.updateStatus(a);
-        System.out.println("Successfully updated the status to [" + status.getText() + "].");
-        /*
+        Twitter twitter = new TwitterFactory().getInstance();
         ArrayList<String> tweetList = new ArrayList<String>();
         try {
-            Query query = new Query("MWC16");
+            Query query = new Query(topic);
             QueryResult result;
             do {
                 result = twitter.search(query);
@@ -43,6 +41,6 @@ public class TweetManager {
             te.printStackTrace();
             System.out.println("Failed to search tweets: " + te.getMessage());
         }
-        System.out.print(tweetList);*/
+        System.out.print(tweetList);
     }
 }
